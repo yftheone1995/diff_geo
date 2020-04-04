@@ -1,11 +1,8 @@
 from sympy import *
 from util_func import *
 import numpy as np
-# x=Symbol('x')
-# a=(Matrix([[1, 0,0], [0, 2,2],[0,2,1]]).eigenvals())
-# print(a)
-# 1;
-########### r theta phi
+
+########### r theta phi      3-d sphere axis
 n=3
 inputsym=['r','theta','phi']
 ginput={}
@@ -17,12 +14,12 @@ for i in inputsym:
 ginput['r']['r']='1';
 ginput['theta']['theta']='r*r'
 ginput['phi']['phi']='r*r*sin(theta)*sin(theta)'
-
+####################################################### init the metric field  ginput
 
 T=getChristSymb(ginput,inputsym)
-print(T)
+print(T)          #############################################get the christ symbol
 T_dict=list2Dict(T,inputsym,listDepth(T))
-R=getRiemannCurvature(T,inputsym)
+R=getRiemannCurvature(T,inputsym) #####################################get the riemann curvature tensor
 R_dict=list2Dict(R,inputsym,listDepth(R))
 print(R_dict)
 # sym={};
